@@ -1,0 +1,21 @@
+{
+    "version":2,
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ],
+    "env": {
+        "mysql_host": "mysql-oprahstudiodb.alwaysdata.net",
+        "mysql_user": "289902",
+        "mysql_password": "qweasd123zxc",
+        "mysql_database": "oprahstudiodb_react"
+    }
+}

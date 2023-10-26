@@ -1,0 +1,68 @@
+CREATE DATABASE  IF NOT EXISTS `uit2bh3x875n9y2o` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `uit2bh3x875n9y2o`;
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
+--
+-- Host: t07cxyau6qg7o5nz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com    Database: uit2bh3x875n9y2o
+-- ------------------------------------------------------
+-- Server version	8.0.28
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+SET @MYSQLDUMP_TEMP_LOG_BIN = @@SESSION.SQL_LOG_BIN;
+SET @@SESSION.SQL_LOG_BIN= 0;
+
+--
+-- GTID state at the beginning of the backup 
+--
+
+SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '';
+
+--
+-- Table structure for table `project_category`
+--
+
+DROP TABLE IF EXISTS `project_category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `project_category` (
+  `pc_id` int NOT NULL AUTO_INCREMENT,
+  `p_id` int NOT NULL,
+  `c_id` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`pc_id`),
+  KEY `p_id` (`p_id`),
+  KEY `c_id` (`c_id`),
+  CONSTRAINT `project_category_ibfk_1` FOREIGN KEY (`p_id`) REFERENCES `project` (`project_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `project_category_ibfk_2` FOREIGN KEY (`c_id`) REFERENCES `category` (`category_id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `project_category`
+--
+
+LOCK TABLES `project_category` WRITE;
+/*!40000 ALTER TABLE `project_category` DISABLE KEYS */;
+INSERT INTO `project_category` VALUES (1,2,1,'2022-11-20 00:00:00'),(3,3,1,'2022-11-20 00:00:00'),(5,4,1,'2022-11-20 00:00:00'),(7,5,4,'2022-11-20 00:00:00'),(9,6,2,'2022-11-20 00:00:00'),(10,7,1,'2022-11-20 00:00:00'),(12,8,4,'2022-11-20 00:00:00'),(14,9,2,'2022-11-20 00:00:00'),(15,10,1,'2022-11-20 00:00:00'),(16,11,1,'2022-11-20 00:00:00'),(17,12,1,'2022-11-20 00:00:00'),(18,13,1,'2022-11-20 00:00:00'),(20,14,1,'2022-11-20 00:00:00'),(21,15,1,'2022-11-20 00:00:00'),(23,16,2,'2022-11-20 00:00:00'),(25,17,4,'2022-11-20 00:00:00'),(28,18,2,'2022-11-20 00:00:00'),(30,19,2,'2022-11-20 00:00:00'),(31,20,2,'2022-11-20 00:00:00'),(33,21,2,'2022-11-20 00:00:00'),(34,22,2,'2022-11-20 00:00:00'),(35,23,2,'2022-11-20 00:00:00'),(36,24,2,'2022-11-20 00:00:00'),(37,25,2,'2022-11-20 00:00:00');
+/*!40000 ALTER TABLE `project_category` ENABLE KEYS */;
+UNLOCK TABLES;
+SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-11-20 17:19:55
