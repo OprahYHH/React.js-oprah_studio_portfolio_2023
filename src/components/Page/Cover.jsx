@@ -26,7 +26,7 @@ export default function Cover() {
                         </p>
                 </div>
                 <div className="btn-project flex items-stretch mb-28 mobile-hide">
-                    <Link to="/projects" className="circle rounded-full h-[150px] w-[150px] self-end bg-white text-dark-black border border-[#26262D]">
+                    <Link to="/" className="circle rounded-full h-[150px] w-[150px] self-end bg-white text-dark-black border border-[#26262D]">
                         <span className="uppercase font-ny text-[16pt] text-center flex justify-center py-10 hover:text-white">view my<br />projects</span>
                     </Link>
                 </div>
